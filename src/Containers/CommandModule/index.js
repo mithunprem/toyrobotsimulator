@@ -1,12 +1,12 @@
-import React from 'react';
-
+import React, { Fragment } from 'react';
+import CommandInput from '../../Components/CommandInput';
+import Result from '../../Components/Result';
 function CommandModule() {
   return (
-    <div className="App">
-      <h4> This is the command module for the toy robot simulator</h4>
-      <h5> Please enter your commands here. </h5>
-      <input type="text" name="command"></input>
-    </div>
+    <Fragment>
+      <CommandInput />
+      <Result />
+    </Fragment>
   );
 }
 
