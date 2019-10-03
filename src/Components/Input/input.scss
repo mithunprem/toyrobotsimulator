@@ -1,0 +1,8 @@
+.command-input {
+  width: 250px;
+  text-transform: uppercase;
+
+  &::placeholder {
+    text-transform: none;
+}
+}

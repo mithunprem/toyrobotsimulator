@@ -1,0 +1,14 @@
+.submit-button {
+  width: 100px;
+  height: 30px;
+  background-color: #bbb8b8;
+  border-radius: 8px;
+  outline: none !important;
+
+  &:hover {
+    background-color: #afacac;
+  }
+  &:active {
+    background-color: #8e8b8b;
+  }
+}

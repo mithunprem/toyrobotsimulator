@@ -1,27 +1,38 @@
 import React, { Component, Fragment } from 'react';
+import Input from '../Input';
+import SubmitButton from '../SubmitButton';
 import './commandInput.scss';
 
 export default class CommandModule extends Component {
 
+  state = {
+    command: ''
+  }
+
+  handleChange = (event) => {
+    const { value } = event.target;
+    this.setState({ command: value });
+  }
+
+
+  submitCommand = () => {
+    console.log(this.state.command);
+  }
+
   render() {
+    const { command } = this.state;
+
     return (
       <Fragment>
-        <div className="m-3 command-input">
+        <div className="m-3 command-input-wrapper">
           <div className="command-input-title">
             Command module for the toy robot simulator
           </div>
           <div className="p-3 command-input-body">
-            <div className="pb-3">Please enter your command here:</div>
-            <div class="input-group">
-              <input
-                className="input" placeholder="Command"
-                type="text" name="command"
-              />
-              <button className="ml-2 submit-button" size="sm"
-                aria-label="Submit Command" onClick={this.submitCommand}>
-                Submit
-              </button>
-            </div>
+            <Input
+              label="Please enter your command here:" placeholder="Command"
+              className={'command-input'} value={command} onChange={this.handleChange} />
+            <SubmitButton size="sm" onClick={this.submitCommand} label="Submit" />
           </div>
         </div>
       </Fragment>

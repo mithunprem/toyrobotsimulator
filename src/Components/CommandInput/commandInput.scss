@@ -1,4 +1,4 @@
-.command-input {
+.command-input-wrapper {
   width: 400px;
   position: relative;
   display: flex;
@@ -16,28 +16,4 @@
     background-color: rgba(0,0,0,.03);
     border-bottom: 1px solid rgba(0,0,0,.125);
   }
-
-  .command-input-body {
-    flex: 1 1 auto;
-
-    .input {
-      width: 250px;
-    }
-
-    .submit-button {
-      width: 100px;
-      height: 30px;
-      background-color: #bbb8b8;
-      border-radius: 8px;
-      outline: none;
-
-      &:hover {
-        background-color: #afacac;
-      }
-      &:active {
-        background-color: #8e8b8b;
-      }
-    }
-  }
-
 }
