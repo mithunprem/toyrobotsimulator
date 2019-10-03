@@ -10,13 +10,13 @@ export default class CommandModule extends Component {
   }
 
   handleChange = (event) => {
-    const { value } = event.target;
-    this.setState({ command: value });
+    this.setState({ command: event.target.value });
   }
 
-
   submitCommand = () => {
-    console.log(this.state.command);
+    const { command } = this.state;
+    // Validate the command here for syntax correctness.
+    this.props.executeCommand(command.toLowerCase());
   }
 
   render() {
@@ -32,7 +32,7 @@ export default class CommandModule extends Component {
             <Input
               label="Please enter your command here:" placeholder="Command"
               className={'command-input'} value={command} onChange={this.handleChange} />
-            <SubmitButton size="sm" onClick={this.submitCommand} label="Submit" />
+            <SubmitButton size="sm" onClick={this.submitCommand} label="Execute" />
           </div>
         </div>
       </Fragment>
