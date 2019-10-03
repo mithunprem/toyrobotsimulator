@@ -1,16 +1,30 @@
-import React, { Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
+import './commandInput.scss';
 
-function CommandModule() {
-  return (
-    <Fragment>
-      <div className="command-module">
-        <h4> This is the command module for the toy robot simulator</h4>
-        <h5> Please enter your commands here. </h5>
-        <input type="text" name="command"></input>
-        <button name="submit-command">Submit command</button>
-      </div>
-    </Fragment>
-  );
+export default class CommandModule extends Component {
+
+  render() {
+    return (
+      <Fragment>
+        <div className="m-3 command-input">
+          <div className="command-input-title">
+            Command module for the toy robot simulator
+          </div>
+          <div className="p-3 command-input-body">
+            <div className="pb-3">Please enter your command here:</div>
+            <div class="input-group">
+              <input
+                className="input" placeholder="Command"
+                type="text" name="command"
+              />
+              <button className="ml-2 submit-button" size="sm"
+                aria-label="Submit Command" onClick={this.submitCommand}>
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </Fragment>
+    );
+  }
 }
-
-export default CommandModule;
