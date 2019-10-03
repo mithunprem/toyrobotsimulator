@@ -2,12 +2,13 @@ import React, { Fragment  } from 'react';
 import PropTypes from 'prop-types';
 import './submitButton.scss';
 
-const SubmitButton = ({ type = "text", size, label, onClick = () => { } }) => {
+const SubmitButton = ({ type = "text", disabled, size, label, onClick = () => { } }) => {
   return (
     <Fragment>
       <button
         className="ml-3 submit-button"
         aria-label="Submit Command"
+        disabled={disabled}
         size={size}
         type={type}
         onClick={onClick}

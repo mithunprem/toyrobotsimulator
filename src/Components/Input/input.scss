@@ -4,5 +4,9 @@
 
   &::placeholder {
     text-transform: none;
-}
+  }
+
+  &.has-error {
+    outline: 3px solid #ffa7a7;
+  }
 }
