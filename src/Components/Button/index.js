@@ -2,14 +2,13 @@ import React, { Fragment  } from 'react';
 import PropTypes from 'prop-types';
 import './button.scss';
 
-const Button = ({ label, disabled, size, onClick = () => { } }) => {
+const Button = ({ className, label, disabled, onClick = () => { } }) => {
   return (
     <Fragment>
       <button
-        className="ml-3 command-button"
+        className={className}
         aria-label={label}
         disabled={disabled}
-        size={size}
         onClick={onClick}
         >
         {label}
@@ -19,9 +18,9 @@ const Button = ({ label, disabled, size, onClick = () => { } }) => {
 }
 
 Button.propTypes = {
+  className: PropTypes.string,
   label: PropTypes.string,
   disabled: PropTypes.bool,
-  size: PropTypes.string,
   onClick: PropTypes.func
 }
 
