@@ -6,7 +6,7 @@ const Report = ({ robotPosition }) => {
   return (
     <Fragment>
       <div className="report">
-        <span className="ml-3">The current position is : {x},{y},{direction.toUpperCase()}</span>
+        <span className="ml-3">The current position is: {x}, {y}, {direction.toUpperCase()}</span>
       </div>
     </Fragment>
   );
