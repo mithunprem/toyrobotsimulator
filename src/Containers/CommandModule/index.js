@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import CommandInput from '../../Components/CommandInput';
-import Result from '../../Components/Result';
+import Report from '../../Components/Report';
 import processCommand from '../../Utils/commandProcessor';
 
 export default class CommandModule extends Component {
@@ -11,25 +11,30 @@ export default class CommandModule extends Component {
       x: -1,
       y: -1,
       direction: ''
-    }
+    },
+    shouldReportRobotStatus: false
   }
 
   executeCommand = command => {
-    const { commandList, robotPosition } = this.state;
-    const updatedResult = processCommand(command, commandList, robotPosition);
+    let { commandList, robotPosition } = this.state;
 
-    this.setState({
-      commandList: updatedResult.commandList,
-      robotPosition: updatedResult.position
-    })
-
+    this.setState(
+       processCommand(command, commandList, robotPosition)
+    );
   }
 
   render() {
+    const { commandList, robotPosition, shouldReportRobotStatus } = this.state;
+
     return (
       <Fragment>
-        <CommandInput executeCommand={this.executeCommand}/>
-        <Result />
+        <div className="command-module-wrapper">
+          <CommandInput executeCommand={this.executeCommand} />
+          {
+            shouldReportRobotStatus ? <Report robotPosition={robotPosition} /> : ''
+          }
+        </div>
+        <hr />
       </Fragment>
     );
   }

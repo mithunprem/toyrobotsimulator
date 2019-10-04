@@ -2,18 +2,19 @@ import setRobotPosition from './placeCommandHandler';
 import moveRobot from './moveCommandHandler';
 import changeRobotDirection from './directionChangeHandler';
 
-const processCommand = (command, commandList, position) => {
+const processCommand = (command, commandList, robotPosition) => {
   let isCommandExecuted = false;
+  let shouldReportRobotStatus = false;
 
   // Convert the command to lowercase to ensure the processing will work
   // the same for any case input.
   command = command.toLowerCase();
 
   if (command.startsWith('place')) {
-    position = setRobotPosition(command);
+    robotPosition = setRobotPosition(command);
     isCommandExecuted = true;
   } else {
-    const { x } = position;
+    const { x } = robotPosition;
 
     /*
       Ensure that the robot is on the table before executing any MOVE
@@ -23,12 +24,16 @@ const processCommand = (command, commandList, position) => {
     if (x > -1) {
       switch(command) {
         case 'move':
-          [ position, isCommandExecuted ] = moveRobot(position);
+          [ robotPosition, isCommandExecuted ] = moveRobot(robotPosition);
           break;
         case 'left':
         case 'right':
           // Execute the direction change`.
-          position = changeRobotDirection(command, position);
+          robotPosition = changeRobotDirection(command, robotPosition);
+          isCommandExecuted = true;
+          break;
+        case 'report':
+          shouldReportRobotStatus = true;
           isCommandExecuted = true;
           break;
         default:
@@ -41,7 +46,7 @@ const processCommand = (command, commandList, position) => {
     commandList.push(command);
   }
 
-  return { commandList, position };
+  return { commandList, robotPosition, shouldReportRobotStatus };
 }
 
 
