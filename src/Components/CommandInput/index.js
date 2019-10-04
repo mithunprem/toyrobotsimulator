@@ -22,10 +22,11 @@ export default class CommandModule extends Component {
     const { command } = this.state;
     const isValidCommand = validateCommand(command);
 
-    this.setState({ commandError: !isValidCommand });
-
     if (isValidCommand) {
+      this.setState({ command: '' });
       this.props.executeCommand(command);
+    } else {
+      this.setState({ commandError: !isValidCommand });
     }
   }
 

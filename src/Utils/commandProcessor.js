@@ -1,7 +1,6 @@
-const PLACE_DELIMITER = ' ';
-const POSITION_DELIMITER = ',';
-
 const processCommand = (command, commandList, position) => {
+
+  command = command.toLowerCase();
 
   if (command.startsWith('place')) {
     const [x, y, direction] = positionCoordinates(command);
@@ -15,7 +14,7 @@ const processCommand = (command, commandList, position) => {
   } else {
     let { x, direction } = position;
 
-    if (x !== '') {
+    if (x > -1) {
       switch(command) {
         case 'move':
           position = executeMove(position);
@@ -79,6 +78,10 @@ const executePositionChange = (command, direction) => {
 
   return direction;
 }
+
+
+const PLACE_DELIMITER = ' ';
+const POSITION_DELIMITER = ',';
 
 
 export default processCommand;
