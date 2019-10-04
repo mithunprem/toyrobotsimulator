@@ -6,6 +6,10 @@
     text-transform: none;
   }
 
+  &:focus {
+    outline: 1px solid #5f5c5c;
+  }
+
   &.has-error {
     outline: 3px solid #ffa7a7;
   }
