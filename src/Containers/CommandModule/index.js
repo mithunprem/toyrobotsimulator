@@ -8,8 +8,8 @@ export default class CommandModule extends Component {
   state = {
     commandList: [],
     robotPosition: {
-      x: '',
-      y: '',
+      x: -1,
+      y: -1,
       direction: ''
     }
   }
@@ -17,6 +17,7 @@ export default class CommandModule extends Component {
   executeCommand = command => {
     const { commandList, robotPosition } = this.state;
     const updatedResult = processCommand(command, commandList, robotPosition);
+
     this.setState({
       commandList: updatedResult.commandList,
       robotPosition: updatedResult.position
