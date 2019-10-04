@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import CommandInput from '../../Components/CommandInput';
+import CommandList from '../../Components/CommandList';
 import Report from '../../Components/Report';
 import processCommand from '../../Utils/commandProcessor';
+import './commandModule.scss';
 
 export default class CommandModule extends Component {
 
@@ -35,6 +37,7 @@ export default class CommandModule extends Component {
           }
         </div>
         <hr />
+        <CommandList commandList={commandList} />
       </Fragment>
     );
   }
