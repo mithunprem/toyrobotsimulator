@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Input from '../Input';
-import SubmitButton from '../SubmitButton';
+import Button from '../Button';
 import validateCommand from '../../Utils/commandValidator'
 import './commandInput.scss';
 
@@ -42,16 +42,12 @@ export default class CommandModule extends Component {
           </div>
           <div className="p-3 command-input-body">
             <Input
-              label="Please enter your command here:"
-              placeholder="Command"
+              label="Please enter your command here:" placeholder="Command"
               className={`command-input ${inputErrorClassName}`}
-              value={command}
-              onChange={this.handleChange} />
-            <SubmitButton
-              size="sm"
-              disabled={commandError}
-              onClick={this.submitCommand}
-              label="Execute" />
+              value={command} onChange={this.handleChange} />
+            <Button
+              className="ml-3 btn btn-secondary btn-sm" label="Execute Command"
+              onClick={this.submitCommand} disabled={commandError} />
           </div>
         </div>
       </Fragment>
