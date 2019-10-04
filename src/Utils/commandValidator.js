@@ -2,6 +2,7 @@ import { MAX_COORDINATE } from '../Constants';
 
 const validateCommand = command => {
   let isValidCommand = false;
+  let errorMessage = '';
 
   // Convert the command to lowercase to ensure the validation will work
   // the same for any case input.
@@ -12,11 +13,21 @@ const validateCommand = command => {
     the command has valid coordinates and direction. For other commands, just
     check if the passed in command is part of the valid commands list.
   */
-  if (validCommandsList.indexOf(command) !== -1 || placeCommandValidationRegex.test(command)) {
-    isValidCommand = true;
+  if (command.startsWith('place')) {
+    if (placeCommandValidationRegex.test(command)) {
+      isValidCommand = true;
+    } else {
+      errorMessage = 'Invalid PLACE command';
+    }
+  } else {
+    if (validCommandsList.indexOf(command) !== -1) {
+      isValidCommand = true;
+    } else {
+      errorMessage = 'Unrecognized command';
+    }
   }
 
-  return isValidCommand;
+  return [ isValidCommand, errorMessage ];
 }
 
 // Validation regex for PLACE command. The place command should be in the

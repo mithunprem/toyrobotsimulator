@@ -8,7 +8,8 @@ export default class CommandModule extends Component {
 
   state = {
     command: '',
-    commandError: false
+    commandError: false,
+    errorMessage: ''
   }
 
   handleChange = (event) => {
@@ -20,19 +21,21 @@ export default class CommandModule extends Component {
 
   submitCommand = () => {
     const { command } = this.state;
-    const isValidCommand = validateCommand(command);
+    const [ isValidCommand, errorMessage ] = validateCommand(command);
 
     if (isValidCommand) {
       this.setState({ command: '' });
       this.props.executeCommand(command);
     } else {
-      this.setState({ commandError: !isValidCommand });
+      this.setState({
+        commandError: !isValidCommand,
+        errorMessage
+      });
     }
   }
 
   render() {
-    const { command, commandError } = this.state;
-    const inputErrorClassName = commandError ? 'has-error' : '';
+    const { command, commandError, errorMessage } = this.state;
 
     return (
       <Fragment>
@@ -42,9 +45,13 @@ export default class CommandModule extends Component {
           </div>
           <div className="p-3 command-input-body">
             <Input
-              label="Please enter your command here:" placeholder="Command"
-              className={`command-input ${inputErrorClassName}`}
-              value={command} onChange={this.handleChange} />
+              name="commandInput"
+              label="Please enter your command here:"
+              placeholder="Command"
+              value={command}
+              showError={commandError}
+              errorMessage={errorMessage}
+              onChange={this.handleChange} />
             <Button
               className="ml-3 btn btn-secondary btn-sm" label="Execute Command"
               onClick={this.submitCommand} disabled={commandError} />
