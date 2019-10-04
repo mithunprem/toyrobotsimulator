@@ -1,19 +1,20 @@
+import { PLACE_DELIMITER, POSITION_DELIMITER } from '../Constants';
+
 const processCommand = (command, commandList, position) => {
 
+  // Convert the command to lowercase to ensure the processing will work
+  // the same for any case input.
   command = command.toLowerCase();
 
   if (command.startsWith('place')) {
-    const [x, y, direction] = positionCoordinates(command);
-
-    if (x<5 && y<5) {
-      position.x = Number(x);
-      position.y = Number(y);
-      position.direction = direction;
-      commandList.push(command);
-    }
+    position = setRobotPosition(command);
+    commandList.push(command);
   } else {
     let { x, direction } = position;
 
+    // Ensure that the robot is on the table before executing any MOVE
+    // or direction commands. If the robot is on the table, then the
+    // x coordinate should be greater than -1.
     if (x > -1) {
       switch(command) {
         case 'move':
@@ -33,9 +34,15 @@ const processCommand = (command, commandList, position) => {
   return { commandList, position };
 }
 
-const positionCoordinates = command => {
-  const position = command.split(PLACE_DELIMITER)[1];
-  return position.split(POSITION_DELIMITER);
+const setRobotPosition = command => {
+  const [ , position ] = command.split(PLACE_DELIMITER);
+  const [ x, y, direction ] = position.split(POSITION_DELIMITER);
+
+  return {
+    x: Number(x),
+    y: Number(y),
+    direction
+  };
 }
 
 const executeMove = ({ x, y, direction }) => {
