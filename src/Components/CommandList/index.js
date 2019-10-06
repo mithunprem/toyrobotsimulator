@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-
+import PropTypes from 'prop-types';
 import './commandList.scss';
 
 const CommandList = ({ commandList }) => {
@@ -27,6 +27,10 @@ const CommandList = ({ commandList }) => {
       }
     </Fragment>
   );
+}
+
+CommandList.propTypes = {
+  commandList: PropTypes.array
 }
 
 export default CommandList;

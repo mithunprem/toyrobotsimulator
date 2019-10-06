@@ -23,8 +23,8 @@ const Input = ({ type = "text", name, placeholder, showError, value, errorMessag
 }
 
 Input.propTypes = {
-  name: PropTypes.string,
   type: PropTypes.string,
+  name: PropTypes.string,
   placeholder: PropTypes.string,
   showError: PropTypes.bool,
   value: PropTypes.string,

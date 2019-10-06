@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 const RobotPositionReport = ({ robotPosition }) => {
 
@@ -11,6 +12,10 @@ const RobotPositionReport = ({ robotPosition }) => {
       </div>
     </Fragment>
   );
+}
+
+RobotPositionReport.propTypes = {
+  robotPosition: PropTypes.object
 }
 
 export default RobotPositionReport;
