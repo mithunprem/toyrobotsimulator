@@ -7,7 +7,7 @@ const CommandList = ({ commandList }) => {
     <Fragment>
       {
         <div className="command-list ml-3">
-          <div className="command-list-header">
+          <div className="command-list-header pl-3 pt-2 pb-2">
             Commands executed
           </div>
           <table className="table m-0 table-sm table-striped table-bordered">

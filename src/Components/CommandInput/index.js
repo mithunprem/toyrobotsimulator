@@ -40,7 +40,7 @@ export default class CommandModule extends Component {
     return (
       <Fragment>
         <div className="command-wrapper m-3">
-          <div className="command-input-title">
+          <div className="command-input-title p-3">
             Command module for the toy robot simulator
           </div>
           <div className="command-input-body p-3">
