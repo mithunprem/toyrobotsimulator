@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Input from '../Input';
 import Button from '../Button';
-import validateCommand from '../../Utils/commandValidator'
+import validateCommand from '../../Utils/commandValidator';
 import './commandInput.scss';
 
 export default class CommandModule extends Component {
@@ -12,7 +12,7 @@ export default class CommandModule extends Component {
     errorMessage: ''
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({
       command: event.target.value,
       commandError: false
@@ -47,12 +47,9 @@ export default class CommandModule extends Component {
             <span className="pr-2">Enter your command here:</span>
             <div className="command-input">
               <Input
-                name="commandInput"
-                placeholder="Command"
-                value={command}
-                showError={commandError}
-                errorMessage={errorMessage}
-                onChange={this.handleChange} />
+                name="commandInput" placeholder="Command"
+                value={command} showError={commandError}
+                errorMessage={errorMessage} onChange={this.handleChange} />
               <Button
                 className="ml-3 btn btn-secondary btn-sm" label="Execute Command"
                 onClick={this.submitCommand} disabled={commandError} />
