@@ -11,8 +11,7 @@ const processCommand = (command, commandList, robotPosition) => {
   command = command.toLowerCase();
 
   if (command.startsWith('place')) {
-    robotPosition = setRobotPosition(command);
-    isCommandExecuted = true;
+    [ robotPosition, isCommandExecuted ] = setRobotPosition(command, robotPosition);
   } else {
     const { x } = robotPosition;
 

@@ -1,5 +1,3 @@
-import { MAX_COORDINATE } from '../Constants';
-
 const validateCommand = command => {
   let isValidCommand = false;
   let errorMessage = '';
@@ -31,7 +29,7 @@ const validateCommand = command => {
 // Validation regex for PLACE command. The place command should be in the
 // format PLACE x,y,position. eg: PLACE 0,0,NORTH.
 const placeCommandValidationRegex =
-  RegExp(`place[ ][0-${MAX_COORDINATE}][,][0-${MAX_COORDINATE}][,](north|south|east|west)$`);
+  RegExp(`place[ ][0-9]+[,][0-9]+[,](north|south|east|west)$`);
 
 // List of valid commands excluding the place command.
 const validCommandsList = ['move', 'left', 'right', 'report', 'reset'];
