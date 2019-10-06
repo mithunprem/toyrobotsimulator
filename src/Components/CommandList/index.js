@@ -6,7 +6,7 @@ const CommandList = ({ commandList }) => {
   return (
     <Fragment>
       {
-        <div className="command-list ml-3">
+        <div className="command-list">
           <div className="command-list-header pl-3 pt-2 pb-2">
             Commands executed
           </div>

@@ -11,5 +11,9 @@
 
   .command-input {
     display: inline-block;
+
+    & button:focus {
+      box-shadow: none;
+    }
   }
 }
