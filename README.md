@@ -1,7 +1,7 @@
 # Toy Robot Simulator
 
 ## About
-The application is a simulation of a toy robot moving on a square tabletop of dimensions 5 units x 5 units.  
+This application is a simulation of a toy robot moving on a square tabletop of dimensions 5 units x 5 units.  
 The robot is free to roam around the surface of the table, but is prevented from falling to destruction. Any movement that would result in the robot falling from the table will be prevented, however further valid movement commands can still be executed.
 
 ### Steps to use
@@ -10,8 +10,8 @@ User can enter the commands in the input text field and hit the 'Execute Command
 Following are the valid commands that can be used in the application.  
 `PLACE X,Y,DIRECTION` - To place the robot on the table at the position (X,Y) facing the DIRECTION specified.  
 `MOVE` - To move the robot by one step in the direction it is currently facing.
-`LEFT` - To rotate the robot backward by 90 degress without changing it's position.  
-`RIGHT` - To rotate the robot forward by 90 degress without changing it's position.  
+`LEFT` - To rotate the robot counter clockwise by 90 degress without changing it's position.  
+`RIGHT` - To rotate the robot clockwise by 90 degress without changing it's position.  
 `REPORT` - To get the current X,Y and DIRECTION of the robot.  
 `RESET` - To reset the robot's position and take it off the table.  
 
@@ -19,7 +19,7 @@ Successfully executed commands will be displayed in a list on the screen.
 When the user issues a REPORT command, the current position of the robot will be displayed above the commands list.  
 
 ### Notes :
-- The origin (0,0) is be considered to be the SOUTH WEST most corner.  
+- The origin (0,0) is considered to be the SOUTH WEST most corner.  
 - The first valid command to the robot is a PLACE command, after that, any sequence of commands can be issued, in any order, including another PLACE command. The application will discard all commands in the sequence until a valid PLACE command has been executed.  
 - A robot that is not on the table will ignore the MOVE, LEFT, RIGHT, REPORT and RESET commands.
 

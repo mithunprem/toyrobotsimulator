@@ -35,8 +35,8 @@ export default class Instructions extends Component  {
                 <ListGroup>
                   <ListGroupItem><b>PLACE X,Y,DIRECTION</b> - To place the robot on the table at the position (X,Y) facing the DIRECTION specified.</ListGroupItem>
                   <ListGroupItem><b>MOVE</b> - To move the robot by one step in the direction it is currently facing.</ListGroupItem>
-                  <ListGroupItem><b>LEFT</b> - To rotate the robot backward by 90 degress without changing it's position.</ListGroupItem>
-                  <ListGroupItem><b>RIGHT</b> - To rotate the robot forward by 90 degress without changing it's position.</ListGroupItem>
+                  <ListGroupItem><b>LEFT</b> - To rotate the robot counter clockwise by 90 degress without changing it's position.</ListGroupItem>
+                  <ListGroupItem><b>RIGHT</b> - To rotate the robot clockwise by 90 degress without changing it's position.</ListGroupItem>
                   <ListGroupItem><b>REPORT</b> - To get the current X,Y and DIRECTION of the robot.</ListGroupItem>
                   <ListGroupItem><b>RESET</b> - To reset the robot's position and take it off the table.</ListGroupItem>
                 </ListGroup>
