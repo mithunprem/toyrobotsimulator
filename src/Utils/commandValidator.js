@@ -34,6 +34,6 @@ const placeCommandValidationRegex =
   RegExp(`place[ ][0-${MAX_COORDINATE}][,][0-${MAX_COORDINATE}][,](north|south|east|west)$`);
 
 // List of valid commands excluding the place command.
-const validCommandsList = ['move', 'left', 'right', 'report'];
+const validCommandsList = ['move', 'left', 'right', 'report', 'reset'];
 
 export default validateCommand;

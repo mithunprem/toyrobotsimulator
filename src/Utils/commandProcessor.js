@@ -36,6 +36,14 @@ const processCommand = (command, commandList, robotPosition) => {
           shouldReportRobotStatus = true;
           isCommandExecuted = true;
           break;
+        case 'reset':
+          commandList = [];
+          robotPosition = {
+            x: -1,
+            y: -1,
+            direction: ''
+          }
+          break;
         default:
       }
     }
