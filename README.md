@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Toy Robot Simulator
 
-## Available Scripts
+## About
+The application is a simulation of a toy robot moving on a square tabletop of dimensions 5 units x 5 units.  
+The robot is free to roam around the surface of the table, but is prevented from falling to destruction. Any movement that would result in the robot falling from the table will be prevented, however further valid movement commands can still be executed.
+
+### Steps to use
+User can enter the commands in the input text field and hit the 'Execute Command' button to execute the command.  
+
+Following are the valid commands that can be used in the application.  
+`PLACE X,Y,DIRECTION` - To place the robot on the table at the position (X,Y) facing the DIRECTION specified.  
+`MOVE` - To move the robot by one step in the direction it is currently facing.
+`LEFT` - To rotate the robot backward by 90 degress without changing it's position.  
+`RIGHT` - To rotate the robot forward by 90 degress without changing it's position.  
+`REPORT` - To get the current X,Y and DIRECTION of the robot.  
+`RESET` - To reset the robot's position and take it off the table.  
+
+Successfully executed commands will be displayed in a list on the screen.  
+When the user issues a REPORT command, the current position of the robot will be displayed above the commands list.  
+
+### Notes :
+- The origin (0,0) is be considered to be the SOUTH WEST most corner.  
+- The first valid command to the robot is a PLACE command, after that, any sequence of commands can be issued, in any order, including another PLACE command. The application will discard all commands in the sequence until a valid PLACE command has been executed.  
+- A robot that is not on the table will ignore the MOVE, LEFT, RIGHT, REPORT and RESET commands.
+
+### Validations in UI
+- Invalid or unrecognised commands will not be executed. The input field will show a warning border and the execute button will be disabled till the user edit the command.
+
+### Test coverage:
+Unit tests are provided for each component and for the business logic.
+
+## Steps to run the application
+
+- Install Node.js (https://nodejs.org/en/), if not installed already
+
+## Install dependencies
 
 In the project directory, you can run:
 
-### `npm start`
+### `yarn install`
+
+## To start the application
+
+In the project directory, you can run:
+
+### `yarn start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
+### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `yarn run build`
 
 Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The app is ready to be deployed!
