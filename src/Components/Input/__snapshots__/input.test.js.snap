@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render without throwing an error 1`] = `
+<input
+  className="custom-input "
+  id="input"
+  onChange={[Function]}
+  placeholder="test input"
+  type="text"
+  value="test"
+/>
+`;

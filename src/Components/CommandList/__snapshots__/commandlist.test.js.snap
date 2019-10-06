@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommandList should render without throwing an error 1`] = `
+<div
+  className="command-list"
+>
+  <div
+    className="command-list-header pl-3 pt-2 pb-2"
+  >
+    Commands executed
+  </div>
+  <table
+    className="table m-0 table-sm table-striped table-bordered"
+  >
+    <tbody>
+      <tr>
+        <td
+          className="p-2 command-row"
+        >
+          Place 0,0,north
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="p-2 command-row"
+        >
+          move
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="p-2 command-row"
+        >
+          report
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

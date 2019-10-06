@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reports should render nothing on load of the page 1`] = `
+<div
+  className="reports m-3"
+>
+  
+  
+</div>
+`;
+
+exports[`Reports should render the commandList throwing an error 1`] = `
+<div
+  className="reports m-3"
+>
+  
+  <div
+    className="command-list"
+  >
+    <div
+      className="command-list-header pl-3 pt-2 pb-2"
+    >
+      Commands executed
+    </div>
+    <table
+      className="table m-0 table-sm table-striped table-bordered"
+    >
+      <tbody>
+        <tr>
+          <td
+            className="p-2 command-row"
+          >
+            Place 0,0,north
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="p-2 command-row"
+          >
+            move
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="p-2 command-row"
+          >
+            report
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Reports should render the robotPosition when it is passed as a prop 1`] = `
+<div
+  className="reports m-3"
+>
+  <div
+    className="report alert alert-info"
+  >
+    <span>
+      Robot's current position is: 
+      1
+      , 
+      1
+      , 
+      NORTH
+    </span>
+  </div>
+  
+</div>
+`;

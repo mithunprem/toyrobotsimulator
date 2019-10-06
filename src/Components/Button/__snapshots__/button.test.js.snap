@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render a disabled button when a disabled prop is passed to the component 1`] = `
+<button
+  aria-label="Test"
+  disabled={true}
+  onClick={[Function]}
+>
+  Test
+</button>
+`;
+
+exports[`Button should render without throwing an error 1`] = `
+<button
+  aria-label="Test"
+  onClick={[Function]}
+>
+  Test
+</button>
+`;
