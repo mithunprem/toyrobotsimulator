@@ -17,11 +17,16 @@ export default class CommandModule extends Component {
   }
 
   executeCommand = command => {
-    let { commandList, robotPosition } = this.state;
+    let { commandList, robotPosition, shouldReportRobotStatus } = this.state;
 
-    this.setState(
-       processCommand(command, commandList, robotPosition)
-    );
+    ({ commandList, robotPosition, shouldReportRobotStatus }
+      = processCommand(command, commandList, robotPosition));
+
+    this.setState({
+      commandList,
+      robotPosition,
+      shouldReportRobotStatus
+    });
   }
 
   render() {
