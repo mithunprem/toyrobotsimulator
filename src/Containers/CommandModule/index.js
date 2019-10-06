@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import CommandInput from '../../Components/CommandInput';
 import Reports from '../../Components/Reports';
+import Instructions from '../../Components/Instructions';
 import processCommand from '../../Utils/commandProcessor';
-import './commandModule.scss';
 
 export default class CommandModule extends Component {
 
@@ -36,6 +36,7 @@ export default class CommandModule extends Component {
           robotPosition={robotPosition}
           commandList={commandList}
         />
+        <Instructions />
       </Fragment>
     );
   }

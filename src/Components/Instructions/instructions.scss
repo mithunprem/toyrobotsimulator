@@ -1,0 +1,20 @@
+.instructions {
+  max-width: 670px;
+
+  .instructions-button {
+    color: #6c757d !important;
+    text-decoration: underline;
+  }
+
+  .instructions-text {
+    font-size: smaller;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .list-group-item {
+      padding: 5px;
+    }
+  }
+}
