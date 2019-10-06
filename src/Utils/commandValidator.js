@@ -19,12 +19,10 @@ const validateCommand = command => {
     } else {
       errorMessage = 'Invalid PLACE command';
     }
+  } else if (validCommandsList.indexOf(command) !== -1) {
+    isValidCommand = true;
   } else {
-    if (validCommandsList.indexOf(command) !== -1) {
-      isValidCommand = true;
-    } else {
-      errorMessage = 'Unrecognized command';
-    }
+    errorMessage = 'Unrecognized command';
   }
 
   return [ isValidCommand, errorMessage ];
