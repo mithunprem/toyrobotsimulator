@@ -9,14 +9,14 @@ User can enter the commands in the input text field and hit the 'Execute Command
 
 Following are the valid commands that can be used in the application.  
 `PLACE X,Y,DIRECTION` - To place the robot on the table at the position (X,Y) facing the DIRECTION specified.  
-`MOVE` - To move the robot by one step in the direction it is currently facing.
+`MOVE` - To move the robot by one step in the direction it is currently facing.  
 `LEFT` - To rotate the robot counter clockwise by 90 degress without changing it's position.  
 `RIGHT` - To rotate the robot clockwise by 90 degress without changing it's position.  
 `REPORT` - To get the current X,Y and DIRECTION of the robot.  
 `RESET` - To reset the robot's position and take it off the table.  
 
 Successfully executed commands will be displayed in a list on the screen.  
-When the user issues a REPORT command, the current position of the robot will be displayed above the commands list.  
+When the user issues a REPORT command, the current position of the robot will be displayed above the executed commands list.  
 
 ### Notes :
 - The origin (0,0) is considered to be the SOUTH WEST most corner.  
