@@ -39,22 +39,24 @@ export default class CommandModule extends Component {
 
     return (
       <Fragment>
-        <div className="m-3 command-input-wrapper">
+        <div className="m-3 command-wrapper">
           <div className="command-input-title">
             Command module for the toy robot simulator
           </div>
           <div className="p-3 command-input-body">
-            <Input
-              name="commandInput"
-              label="Please enter your command here:"
-              placeholder="Command"
-              value={command}
-              showError={commandError}
-              errorMessage={errorMessage}
-              onChange={this.handleChange} />
-            <Button
-              className="ml-3 btn btn-secondary btn-sm" label="Execute Command"
-              onClick={this.submitCommand} disabled={commandError} />
+            <span className="pr-2">Enter your command here:</span>
+            <div className="command-input">
+              <Input
+                name="commandInput"
+                placeholder="Command"
+                value={command}
+                showError={commandError}
+                errorMessage={errorMessage}
+                onChange={this.handleChange} />
+              <Button
+                className="ml-3 btn btn-secondary btn-sm" label="Execute Command"
+                onClick={this.submitCommand} disabled={commandError} />
+            </div>
           </div>
         </div>
       </Fragment>

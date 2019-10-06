@@ -1,5 +1,5 @@
-.command-input-wrapper {
-  width: 480px;
+.command-wrapper {
+  max-width: 640px;
   border: 1px solid #00000020;
   border-radius: .25rem;
 
@@ -8,5 +8,9 @@
     background-color: #343a40;
     color: white;
     border-bottom: 1px solid #00000020;
+  }
+
+  .command-input {
+    display: inline-block;
   }
 }
