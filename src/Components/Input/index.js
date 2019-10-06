@@ -3,17 +3,15 @@ import { Tooltip } from 'reactstrap';
 import PropTypes from 'prop-types';
 import './input.scss';
 
-const Input = ({ type = "text", name, label, placeholder, showError, value, errorMessage, onChange = () => { } }) => {
+const Input = ({ type = "text", name, placeholder, showError, value, errorMessage, onChange = () => { } }) => {
 
   const errorClassName = showError ? 'has-error' : '';
 
   return (
     <Fragment>
-      <label htmlFor={placeholder}>{label}</label>
-      <br/>
       <input
         id={name}
-        className={`command-input ${errorClassName}`}
+        className={`custom-input ${errorClassName}`}
         placeholder={placeholder}
         type={type}
         value={value}
@@ -26,7 +24,6 @@ const Input = ({ type = "text", name, label, placeholder, showError, value, erro
 
 Input.propTypes = {
   name: PropTypes.string,
-  label: PropTypes.string,
   type: PropTypes.string,
   placeholder: PropTypes.string,
   showError: PropTypes.bool,
