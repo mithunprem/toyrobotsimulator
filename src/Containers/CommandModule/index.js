@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import CommandInput from '../../Components/CommandInput';
-import CommandList from '../../Components/CommandList';
-import Report from '../../Components/Report';
+import Reports from '../../Components/Reports';
 import processCommand from '../../Utils/commandProcessor';
 import './commandModule.scss';
 
@@ -30,20 +29,13 @@ export default class CommandModule extends Component {
 
     return (
       <Fragment>
-        <div className="command-module-wrapper">
-          <CommandInput executeCommand={this.executeCommand} />
-        </div>
-          {
-            shouldReportRobotStatus ? <Report robotPosition={robotPosition} /> : ''
-          }
-          <hr />
-        {
-          (commandList.length > 0) ? (
-            <Fragment>
-              <CommandList commandList={commandList} />
-            </Fragment>
-          ) : ''
-        }
+        <CommandInput executeCommand={this.executeCommand} />
+        <hr />
+        <Reports
+          reportRobotStatus={shouldReportRobotStatus}
+          robotPosition={robotPosition}
+          commandList={commandList}
+        />
       </Fragment>
     );
   }
