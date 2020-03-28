@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Button from '../Button';
 import { Card, CardBody, Collapse, ListGroup, ListGroupItem as Li } from 'reactstrap';
-import './instructions.scss';
 
 export default class Instructions extends Component  {
   state = {

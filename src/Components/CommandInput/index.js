@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import Input from '../Input';
 import Button from '../Button';
 import validateCommand from '../../Utils/commandValidator';
-import './commandInput.scss';
 
 export default class CommandModule extends Component {
 

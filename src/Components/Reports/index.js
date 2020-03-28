@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import CommandList from '../../Components/CommandList';
 import RobotPositionReport from '../../Components/RobotPositionReport';
 import PropTypes from 'prop-types';
-import './reports.scss';
 
 const Reports = ({ reportRobotStatus, robotPosition, commandList }) => {
 

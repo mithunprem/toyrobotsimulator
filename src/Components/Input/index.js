@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { Tooltip } from 'reactstrap';
 import PropTypes from 'prop-types';
-import './input.scss';
 
 const Input = ({ type = "text", name, placeholder, showError, value, errorMessage, onChange = () => { } }) => {
 

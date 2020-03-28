@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import './header.scss';
 
 const Header = () => {
   return (

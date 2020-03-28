@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import './commandList.scss';
 
 const CommandList = ({ commandList }) => {
   return (
