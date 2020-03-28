@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import CommandInput from '../../Components/CommandInput';
-import Reports from '../../Components/Reports';
-import Instructions from '../../Components/Instructions';
-import processCommand from '../../Utils/commandProcessor';
+import CommandInput from '../../components/commandInput';
+import Reports from '../../components/reports';
+import Instructions from '../../components/instructions';
+import processCommand from '../../utils/commandProcessor';
 
 export default class CommandModule extends Component {
 

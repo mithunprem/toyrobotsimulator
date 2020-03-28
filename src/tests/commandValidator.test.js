@@ -1,4 +1,4 @@
-import validateCommand from '../Utils/commandValidator';
+import validateCommand from '../utils/commandValidator';
 
 describe('Command Validator', () => {
   it('should validate a well formed PLACE command', () => {

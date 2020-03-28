@@ -1,4 +1,4 @@
-import { PLACE_DELIMITER, POSITION_DELIMITER, MAX_COORDINATE } from '../Constants';
+import { PLACE_DELIMITER, POSITION_DELIMITER, MAX_COORDINATE } from '../constants';
 
 const setRobotPosition = (command, robotPosition) => {
   const [, position ] = command.split(PLACE_DELIMITER);

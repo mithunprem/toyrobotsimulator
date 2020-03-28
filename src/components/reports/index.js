@@ -1,6 +1,6 @@
 import React from 'react';
-import CommandList from '../../Components/CommandList';
-import RobotPositionReport from '../../Components/RobotPositionReport';
+import CommandList from '../../components/commandList';
+import RobotPositionReport from '../../components/robotPositionReport';
 import PropTypes from 'prop-types';
 
 const Reports = ({ reportRobotStatus, robotPosition, commandList }) => {

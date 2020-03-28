@@ -1,4 +1,4 @@
-import { MAX_COORDINATE } from '../Constants';
+import { MAX_COORDINATE } from '../constants';
 
 /*
   A MOVE command will move the robot by one step on x or y plane based on the

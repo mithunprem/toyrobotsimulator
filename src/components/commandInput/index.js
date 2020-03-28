@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Input from '../Input';
-import Button from '../Button';
-import validateCommand from '../../Utils/commandValidator';
+import Input from '../input';
+import Button from '../button';
+import validateCommand from '../../utils/commandValidator';
 
 export default class CommandModule extends Component {
 

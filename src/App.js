@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Components/Header';
-import CommandModule from './Containers/CommandModule';
+import Header from './components/header';
+import CommandModule from './containers/commandModule';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/index.scss';
 

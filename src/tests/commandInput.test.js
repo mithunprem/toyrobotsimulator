@@ -1,9 +1,9 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import CommandInput from '../Components/CommandInput';
-import Input from '../Components/Input';
-import Button from '../Components/Button';
+import CommandInput from '../components/commandInput';
+import Input from '../components/input';
+import Button from '../components/button';
 
 describe("CommandInput", () => {
   it("should render one Input component", () => {

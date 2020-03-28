@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from '../Button';
+import Button from '../button';
 import { Card, CardBody, Collapse, ListGroup, ListGroupItem as Li } from 'reactstrap';
 
 export default class Instructions extends Component  {

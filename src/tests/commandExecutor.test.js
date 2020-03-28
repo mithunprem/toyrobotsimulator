@@ -1,4 +1,4 @@
-import processCommand from '../Utils/commandProcessor';
+import processCommand from '../utils/commandProcessor';
 
 describe('Process Command', () => {
   const commandList = [];
