@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Input from '../Input';
 import Button from '../Button';
 import validateCommand from '../../Utils/commandValidator';
@@ -37,25 +37,23 @@ export default class CommandModule extends Component {
     const { command, commandError, errorMessage } = this.state;
 
     return (
-      <Fragment>
-        <div className="command-wrapper m-3">
-          <div className="command-input-title p-3">
-            Command module for the toy robot simulator
-          </div>
-          <div className="command-input-body p-3">
-            <span className="pr-2">Enter your command here:</span>
-            <div className="command-input">
-              <Input
-                name="commandInput" placeholder="Command"
-                value={command} showError={commandError}
-                errorMessage={errorMessage} onChange={this.handleChange} />
-              <Button
-                className="ml-3 btn btn-secondary btn-sm" label="Execute Command"
-                onClick={this.submitCommand} disabled={commandError} />
-            </div>
+      <div className="command-wrapper m-3">
+        <div className="command-input-title p-3">
+          Command module for the toy robot simulator
+        </div>
+        <div className="command-input-body p-3">
+          <span className="pr-2">Enter your command here:</span>
+          <div className="command-input">
+            <Input
+              name="commandInput" placeholder="Command"
+              value={command} showError={commandError}
+              errorMessage={errorMessage} onChange={this.handleChange} />
+            <Button
+              className="ml-3 btn btn-secondary btn-sm" label="Execute Command"
+              onClick={this.submitCommand} disabled={commandError} />
           </div>
         </div>
-      </Fragment>
+      </div>
     );
   }
 }

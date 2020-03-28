@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const RobotPositionReport = ({ robotPosition }) => {
@@ -6,11 +6,9 @@ const RobotPositionReport = ({ robotPosition }) => {
   const { x, y, direction } = robotPosition;
 
   return (
-    <Fragment>
-      <div className="report alert alert-info">
-        <span>Robot's current position is: {x}, {y}, {direction.toUpperCase()}</span>
-      </div>
-    </Fragment>
+    <div className="report alert alert-info">
+      <span>Robot's current position is: {x}, {y}, {direction.toUpperCase()}</span>
+    </div>
   );
 }
 

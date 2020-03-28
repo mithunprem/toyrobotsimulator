@@ -1,18 +1,16 @@
-import React, { Fragment  } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({ className, label, disabled, onClick = () => { } }) => {
   return (
-    <Fragment>
-      <button
-        className={className}
-        aria-label={label}
-        disabled={disabled}
-        onClick={onClick}
-        >
-        {label}
-      </button>
-    </Fragment>
+    <button
+      className={className}
+      aria-label={label}
+      disabled={disabled}
+      onClick={onClick}
+      >
+      {label}
+    </button>
   )
 }
 

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import CommandInput from '../../Components/CommandInput';
 import Reports from '../../Components/Reports';
 import Instructions from '../../Components/Instructions';
@@ -33,7 +33,7 @@ export default class CommandModule extends Component {
     const { commandList, robotPosition, shouldReportRobotStatus } = this.state;
 
     return (
-      <Fragment>
+      <>
         <CommandInput executeCommand={this.executeCommand} />
         <hr />
         <Reports
@@ -42,7 +42,7 @@ export default class CommandModule extends Component {
           commandList={commandList}
         />
         <Instructions />
-      </Fragment>
+      </>
     );
   }
 }

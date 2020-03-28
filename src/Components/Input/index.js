@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Tooltip } from 'reactstrap';
 import PropTypes from 'prop-types';
 
@@ -7,7 +7,7 @@ const Input = ({ type = "text", name, placeholder, showError, value, errorMessag
   const errorClassName = showError ? 'has-error' : '';
 
   return (
-    <Fragment>
+    <>
       <input
         id={name}
         className={`custom-input ${errorClassName}`}
@@ -17,7 +17,7 @@ const Input = ({ type = "text", name, placeholder, showError, value, errorMessag
         onChange={onChange}
       />
       <Tooltip placement="bottom" target={name} fade={false} isOpen={showError}>{errorMessage}</Tooltip>
-    </Fragment>
+    </>
   )
 }
 
