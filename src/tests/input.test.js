@@ -1,6 +1,6 @@
 import React from 'react';
 import { create } from 'react-test-renderer';
-import Input from '../../Components/Input';
+import Input from '../Components/Input';
 
 describe("Input", () => {
   const div = document.createElement('div');

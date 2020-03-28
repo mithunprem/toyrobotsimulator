@@ -1,6 +1,6 @@
 import React from 'react';
 import { create } from 'react-test-renderer';
-import Reports from '../../Components/Reports';
+import Reports from '../Components/Reports';
 
 describe("Reports", () => {
   const robotPosition = { x:1, y:1, direction:'NORTH' };
