@@ -1,36 +1,36 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { setRobotInfo } from '../../store/actions/commandModule';
 import CommandInput from '../../components/commandInput';
 import Reports from '../../components/reports';
 import Instructions from '../../components/instructions';
 import processCommand from '../../utils/commandProcessor';
 
-export default class CommandModule extends Component {
+const mapStateToProps = state => ({
+  commandList: state.commandModule.commandList,
+  robotPosition: state.commandModule.robotPosition,
+  shouldReportRobotStatus: state.commandModule.shouldReportRobotStatus
+});
 
-  state = {
-    commandList: [],
-    robotPosition: {
-      x: -1,
-      y: -1,
-      direction: ''
-    },
-    shouldReportRobotStatus: false
-  }
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+    setRobotInfo,
+  }, dispatch);
+
+class CommandModule extends Component {
 
   executeCommand = command => {
-    let { commandList, robotPosition, shouldReportRobotStatus } = this.state;
+    let { commandList, robotPosition, shouldReportRobotStatus, setRobotInfo } = this.props;
 
     ({ commandList, robotPosition, shouldReportRobotStatus }
       = processCommand(command, commandList, robotPosition));
 
-    this.setState({
-      commandList,
-      robotPosition,
-      shouldReportRobotStatus
-    });
+    setRobotInfo(commandList, robotPosition, shouldReportRobotStatus);
   }
 
   render() {
-    const { commandList, robotPosition, shouldReportRobotStatus } = this.state;
+    const { commandList, robotPosition, shouldReportRobotStatus } = this.props;
 
     return (
       <>
@@ -46,3 +46,8 @@ export default class CommandModule extends Component {
     );
   }
 }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CommandModule);

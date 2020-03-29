@@ -6,3 +6,7 @@ export const COMMAND_INPUT = {
   SET: 'SET_COMMAND',
   SET_ERROR: 'SET_COMMAND_INPUT_ERROR',
 };
+
+export const COMMAND_MODULE = {
+  SET: 'SET_ROBOT_INFO'
+};
