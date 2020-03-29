@@ -1,1 +1,3 @@
-// Action types to be defined here.
+export const INSTRUCTIONS = {
+  TOGGLE_DISPLAY: 'SHOW_HIDE_INSTRUCTIONS'
+};

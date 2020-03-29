@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { toggleShowInstructionsFlag } from '../../store/actions/instructions';
 import Button from '../button';
 import { Card, CardBody, Collapse, ListGroup, ListGroupItem as Li } from 'reactstrap';
 
-export default class Instructions extends Component  {
-  state = {
-    showInstructions: false,
-  }
+const mapStateToProps = state => ({
+  showInstructions: state.instructions.showInstructions
+});
 
-  toggleInstructions = () => {
-    this.setState({ showInstructions: !this.state.showInstructions });
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ toggleShowInstructionsFlag }, dispatch);
+
+class Instructions extends Component  {
+
+  toggleInstructionsDisplay = () => {
+    const { showInstructions, toggleShowInstructionsFlag } = this.props;
+    toggleShowInstructionsFlag(!showInstructions);
   }
 
   render() {
-    const { showInstructions } = this.state;
+    const { showInstructions } = this.props;
     const buttonLabel = showInstructions ? 'Hide instructions' :
       'View instructions and sample commands';
 
@@ -21,7 +29,7 @@ export default class Instructions extends Component  {
         <Button
           className="instructions-button btn btn-link btn-sm p-0"
           label={buttonLabel}
-          onClick={this.toggleInstructions} />
+          onClick={this.toggleInstructionsDisplay} />
         <Collapse className="mt-2 instructions-text text-muted" isOpen={showInstructions}>
           <Card>
             <CardBody>
@@ -79,6 +87,7 @@ export default class Instructions extends Component  {
   }
 }
 
-
-
-//   - .
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Instructions);
