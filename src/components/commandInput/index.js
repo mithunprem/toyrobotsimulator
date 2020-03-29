@@ -1,40 +1,45 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { setCommand, setCommandError } from '../../store/actions/commandInput';
 import Input from '../input';
 import Button from '../button';
 import validateCommand from '../../utils/commandValidator';
 
-export default class CommandModule extends Component {
+const mapStateToProps = state => ({
+  command: state.commandInput.command,
+  commandError: state.commandInput.commandError,
+  errorMessage: state.commandInput.errorMessage
+});
 
-  state = {
-    command: '',
-    commandError: false,
-    errorMessage: ''
-  }
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+    setCommand,
+    setCommandError
+  }, dispatch);
+
+class CommandModule extends Component {
 
   handleChange = event => {
-    this.setState({
-      command: event.target.value,
-      commandError: false
-    });
+    const { setCommand, setCommandError } = this.props;
+    setCommand(event.target.value);
+    setCommandError(false, '');
   }
 
   submitCommand = () => {
-    const { command } = this.state;
+    const { command, setCommand, executeCommand, setCommandError } = this.props;
     const [ isValidCommand, errorMessage ] = validateCommand(command);
 
     if (isValidCommand) {
-      this.setState({ command: '' });
-      this.props.executeCommand(command);
+      setCommand('');
+      executeCommand(command);
     } else {
-      this.setState({
-        commandError: !isValidCommand,
-        errorMessage
-      });
+      setCommandError(true, errorMessage);
     }
   }
 
   render() {
-    const { command, commandError, errorMessage } = this.state;
+    const { command, commandError, errorMessage } = this.props;
 
     return (
       <div className="command-wrapper m-3">
@@ -57,3 +62,8 @@ export default class CommandModule extends Component {
     );
   }
 }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CommandModule);
