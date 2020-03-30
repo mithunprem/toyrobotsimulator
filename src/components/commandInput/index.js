@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch =>
     setCommandError
   }, dispatch);
 
-class CommandModule extends Component {
+class CommandInput extends Component {
 
   handleChange = event => {
     const { setCommand, setCommandError } = this.props;
@@ -66,4 +66,4 @@ class CommandModule extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CommandModule);
+)(CommandInput);
