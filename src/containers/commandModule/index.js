@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { setRobotInfo } from '../../store/actions/commandModule';
 import CommandInput from '../../components/commandInput';
-import Reports from '../../components/reports';
+import Reports from '../reports';
 import Instructions from '../../components/instructions';
 import processCommand from '../../utils/commandProcessor';
 

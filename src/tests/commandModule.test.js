@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import CommandModule from '../containers/commandModule';
 import CommandInput from '../components/commandInput';
-import Reports from '../components/reports';
+import Reports from '../containers/reports';
 
 describe("CommandInput", () => {
   it("should render one Command Module component", () => {
